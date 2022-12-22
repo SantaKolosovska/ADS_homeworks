@@ -1,5 +1,10 @@
 package other;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class BinarySearch {
 
     public static boolean binarySearchRecursive(int[] array, int x, int left, int right) {
@@ -25,9 +30,9 @@ public class BinarySearch {
             if (array[mid] == x) {
                 return true;
             } else if (x < array[mid]) {
-                return binarySearchRecursive(array, x, left, mid - 1);
+                right = mid - 1;
             } else {
-                return binarySearchRecursive(array, x, mid + 1, right);
+                left = mid + 1;
             }
         }
         return false;
@@ -57,5 +62,6 @@ public class BinarySearch {
 
         System.out.println(binarySearchIterative(array, 11));
         System.out.println(binarySearchIterative(array, 5));
+
     }
 }
